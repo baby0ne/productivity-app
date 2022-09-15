@@ -30,7 +30,7 @@ function App({ demo = false }: PropsType) {
 
    useEffect(() => {
       dispatch(initializeAppTC());
-   }, []);
+   }, [dispatch]);
 
    const onClickHandler = () => {
       dispatch(logoutTC())
