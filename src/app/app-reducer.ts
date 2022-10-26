@@ -5,14 +5,16 @@ const initialState = {
     error: null as string | null,
 }
 
+export type AppStateType = typeof initialState
+
 const slice = createSlice({
     name: 'app',
     initialState,
     reducers: {
-        setAppStatusAC: (state, action: PayloadAction<{ status: RequestStatusType }>) => {
+        setAppStatusAC(state, action: PayloadAction<{ status: RequestStatusType }>) {
             state.status = action.payload.status
         },
-        setAppErrorAC: (state, action: PayloadAction<{ error: string | null }>) => {
+        setAppErrorAC(state, action: PayloadAction<{ error: string | null }>) {
             state.error = action.payload.error
         }
     }
