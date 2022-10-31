@@ -7,11 +7,11 @@ import FormGroup from '@mui/material/FormGroup';
 import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { useFormik } from 'formik';
-import { loginTC } from './authReducer';
-import { useDispatch, useSelector } from 'react-redux'
-import { AppRootStateType } from '../../../app/store';
-import { Navigate } from 'react-router-dom';
+import {useFormik} from 'formik';
+import {loginTC} from './authReducer';
+import {useSelector} from 'react-redux'
+import {AppRootStateType, useAppDispatch} from '../../../app/store';
+import {Navigate} from 'react-router-dom';
 
 type FormikErrorType = {
    email?: string
@@ -20,7 +20,7 @@ type FormikErrorType = {
 }
 
 export const Login = React.memo(() => {
-   const dispatch = useDispatch();
+   const dispatch = useAppDispatch();
    const isLoggedIn = useSelector<AppRootStateType, boolean>(state => state.auth.isLoggedIn);
 
    const formik = useFormik({

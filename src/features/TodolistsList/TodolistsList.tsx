@@ -38,7 +38,7 @@ export const TodolistsList = React.memo( function ({demo = false}: PropsType)  {
     }, [])
 
     const removeTask = useCallback(function (id: string, todolistId: string) {
-        const thunk = removeTaskTC(id, todolistId)
+        const thunk = removeTaskTC({taskId: id, todolistId})
         dispatch(thunk)
     }, [dispatch])
 
