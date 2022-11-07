@@ -11,6 +11,7 @@ const instance = axios.create({
 // api
 export const todolistsAPI = {
    getTodolists() {
+      debugger
       return instance.get<TodolistType[]>('todo-lists');
    },
    createTodolist(title: string) {
