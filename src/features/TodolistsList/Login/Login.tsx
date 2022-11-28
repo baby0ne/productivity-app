@@ -38,7 +38,7 @@ export const Login = React.memo(() => {
             }
             if (!values.password) {
                 errors.password = 'Required';
-            } else if (values.password.length < 8) {
+            } else if (values.password.length < 4) {
                 errors.password = 'Password is too short';
             }
             return errors;
